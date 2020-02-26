@@ -1,0 +1,42 @@
+<p>people works!</p>
+<table width="100%">
+    <tr>
+        <td>
+            <button (click)="getPeopleFromController()">Get People From Controller</button>
+            <button (click)="addPersonToController('tahira', 'developer')">Add Person To Controller</button>
+            <h3>People from controller:</h3>
+            <table *ngIf="peopleFromController">
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                </tr>
+
+                <tr *ngFor="let person of peopleFromController">
+                    <td>{{person.name}}</td>
+                    <td>{{person.role}}</td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <button (click)="sayHelloHub()">Say Hello via Hub</button>
+            <pre>Hub Connected: {{hubConnected}}</pre>
+        </td>
+        <td>
+            <button (click)="getPeopleFromHub()">Get People From Hub</button>
+            <button (click)="addPersonToHub('david', 'developer')">Add Person To Hub Via Strings</button>
+            <button (click)="addPersonToHubViaJson('mohammad', 'developer')">Add Person To Hub Via Json</button>
+            <h3>People from hub:</h3>
+            <table *ngIf="peopleFromHub">
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                </tr>
+
+                <tr *ngFor="let person of peopleFromHub">
+                    <td>{{person.name}}</td>
+                    <td>{{person.role}}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
